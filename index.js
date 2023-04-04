@@ -1,7 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var inmemorydbadapter = require("./inmemorydbadapter");
+//var inmemorydbadapter = require("./inmemorydbadapter");
+var MongoDBAdapter = require("./mongodbadapter");
 var apiBaseAddress = "/api";
 
 var app = express();
@@ -17,7 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function getDBAdapter(req) {
-  var db = new inmemorydbadapter(req.session);
+  //var db = new inmemorydbadapter(req.session);
+  var db = new MongoDBAdapter(req.session);
   return db;
 }
 
