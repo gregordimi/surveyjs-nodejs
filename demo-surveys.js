@@ -9,7 +9,7 @@ const surveys = [{
         "title": "Please indicate if you agree or disagree with the following statements",
         "columns": [{
           "value": 1,
-          "text": "Strongly disagree"
+          "text": "Strongly disagree" 
         }, {
           "value": 2,
           "text": "Disagree"
