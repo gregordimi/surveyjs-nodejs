@@ -28,8 +28,10 @@
   "homepage": "https://github.com/surveyjs/surveyjs-nodejs#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "dotenv": "^16.0.3",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "mongodb": "^5.1.0",
     "pg-promise": "^7.3.2"
   }
 }
