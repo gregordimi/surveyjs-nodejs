@@ -12,10 +12,10 @@ async function main() {
         await client.connect();
 
         // Create 'SurveySchemas' collection
-        const surveySchemasCollection = await client.db('admin').createCollection('SurveySchemas');
+        const surveySchemasCollection = await client.db('probahsurveys').createCollection('SurveySchemas');
 
         // Create 'SurveyResults' collection
-        const surveyResultsCollection = await client.db('admin').createCollection('SurveyResults');
+        const surveyResultsCollection = await client.db('probahsurveys').createCollection('SurveyResults');
 
         console.log('Collections created successfully.');
     } catch (error) {
