@@ -24,7 +24,7 @@ function MongoDBAdapter() {
 
   async function getSurvey(surveyId, callback) {
     await withMongoDb(async (client) => {
-      const survey = await client.db('probahsurveys').collection('SurveySchemas').findOne({ id: surveyId });
+      const survey = await client.db('probahsurveys').collection('SurveySchemas').findOne({ survey_id: surveyId });
       callback(survey);
     });
   }
@@ -32,7 +32,7 @@ function MongoDBAdapter() {
   async function addSurvey(name, callback) {
     await withMongoDb(async (client) => {
       const newObj = {
-        id: new Date().toISOString(), // Generate a unique ID
+        survey_id: new Date().toISOString(), // Generate a unique ID
         name: name || 'Default Name',
         json: '{}',
       };
@@ -44,19 +44,19 @@ function MongoDBAdapter() {
   async function storeSurvey(id, name, json, callback) {
     await withMongoDb(async (client) => {
       const survey = {
-        id: id,
+        survey_id: id,
         name: name || id,
         json: json,
       };
 
-      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ id: id }, { $set: survey }, { upsert: true });
+      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ survey_id: id }, { $set: survey }, { upsert: true });
       callback(survey);
     });
   }
 
   async function deleteSurvey(surveyId, callback) {
     await withMongoDb(async (client) => {
-      const result = await client.db('probahsurveys').collection('SurveySchemas').deleteOne({ id: surveyId });
+      const result = await client.db('probahsurveys').collection('SurveySchemas').deleteOne({ survey_id: surveyId });
       callback(result);
     });
   }
@@ -64,8 +64,8 @@ function MongoDBAdapter() {
   async function postResults(postId, json, callback) {
     await withMongoDb(async (client) => {
       const result = await client.db('probahsurveys').collection('SurveyResults').insertOne({
-        id: new Date().toISOString(),
-        survey_schema_id: postId,
+        result_id: new Date().toISOString(),
+        survey_id: postId,
         content: json,
       });
       callback(result);
@@ -74,15 +74,15 @@ function MongoDBAdapter() {
 
   async function getResults(postId, callback) {
     await withMongoDb(async (client) => {
-      const results = await client.db('probahsurveys').collection('SurveyResults').find({ survey_schema_id: postId }).toArray();
+      const results = await client.db('probahsurveys').collection('SurveyResults').find({ survey_id: postId }).toArray();
       callback(results);
     });
   }
 
   async function changeName(id, name, callback) {
     await withMongoDb(async (client) => {
-      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ id: id }, { $set: { name: name } });
-      const updatedSurvey = await client.db('probahsurveys').collection('SurveySchemas').findOne({ id: id });
+      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ survey_id: id }, { $set: { name: name } });
+      const updatedSurvey = await client.db('probahsurveys').collection('SurveySchemas').findOne({ survey_id: id });
       callback(updatedSurvey);
     });
   }
