@@ -36,7 +36,7 @@ function MongoDBAdapter() {
         name: name || 'Default Name',
         json: '{}',
       };
-      await client.db('your_database_name').collection('SurveySchemas').insertOne(newObj);
+      await client.db('probahsurveys').collection('SurveySchemas').insertOne(newObj);
       callback(newObj);
     });
   }
@@ -49,21 +49,21 @@ function MongoDBAdapter() {
         json: json,
       };
 
-      await client.db('your_database_name').collection('SurveySchemas').updateOne({ id: id }, { $set: survey }, { upsert: true });
+      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ id: id }, { $set: survey }, { upsert: true });
       callback(survey);
     });
   }
 
   async function deleteSurvey(surveyId, callback) {
     await withMongoDb(async (client) => {
-      const result = await client.db('your_database_name').collection('SurveySchemas').deleteOne({ id: surveyId });
+      const result = await client.db('probahsurveys').collection('SurveySchemas').deleteOne({ id: surveyId });
       callback(result);
     });
   }
 
   async function postResults(postId, json, callback) {
     await withMongoDb(async (client) => {
-      const result = await client.db('your_database_name').collection('SurveyResults').insertOne({
+      const result = await client.db('probahsurveys').collection('SurveyResults').insertOne({
         id: new Date().toISOString(),
         survey_schema_id: postId,
         content: json,
@@ -74,15 +74,15 @@ function MongoDBAdapter() {
 
   async function getResults(postId, callback) {
     await withMongoDb(async (client) => {
-      const results = await client.db('your_database_name').collection('SurveyResults').find({ survey_schema_id: postId }).toArray();
+      const results = await client.db('probahsurveys').collection('SurveyResults').find({ survey_schema_id: postId }).toArray();
       callback(results);
     });
   }
 
   async function changeName(id, name, callback) {
     await withMongoDb(async (client) => {
-      await client.db('your_database_name').collection('SurveySchemas').updateOne({ id: id }, { $set: { name: name } });
-      const updatedSurvey = await client.db('your_database_name').collection('SurveySchemas').findOne({ id: id });
+      await client.db('probahsurveys').collection('SurveySchemas').updateOne({ id: id }, { $set: { name: name } });
+      const updatedSurvey = await client.db('probahsurveys').collection('SurveySchemas').findOne({ id: id });
       callback(updatedSurvey);
     });
   }
