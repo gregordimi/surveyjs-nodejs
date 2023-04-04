@@ -613,6 +613,506 @@ const surveys = [{
     "showQuestionNumbers": "off",
     "storeOthersAsComment": false
   }
+  
+},
+{
+  "id": "3",
+  "name": "Producte test 123",
+  "json": {
+    "logoPosition": "right",
+    "pages": [
+     {
+      "name": "page1",
+      "elements": [
+       {
+        "type": "radiogroup",
+        "name": "GDPR",
+        "title": {
+         "default": "Do you agree with the GDPR statement?",
+         "de": "test"
+        },
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": {
+           "default": "Yes",
+           "de": "test"
+          }
+         },
+         {
+          "value": "2",
+          "text": {
+           "default": "No",
+           "de": "test"
+          }
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page2",
+      "elements": [
+       {
+        "type": "radiogroup",
+        "name": "Gender",
+        "title": "To which gender do you most identify?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Male",
+         "Female",
+         "Non-binary",
+         "Other"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page3",
+      "elements": [
+       {
+        "type": "text",
+        "name": "Age",
+        "title": "What is your age?",
+        "hideNumber": true,
+        "isRequired": true,
+        "inputType": "number",
+        "min": 0,
+        "max": 100
+       }
+      ]
+     },
+     {
+      "name": "page4",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "PurchasedCategories",
+        "title": "Which of the following products have you purchased personally in the past 3 months?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Clothes (e.g. jeans, t-shirts, jackets, etc)",
+         "Accessories (e.g. jewelry, watches, etc)",
+         "Shoes (e.g. sneakers, boots, sandals, etc)",
+         "Skin care products (e.g. face cream, face wash, etc)",
+         "Hair care products (e.g. shampoos, hair oils, etc)",
+         "Fine fragrances (e.g. perfumes, eau de toilette, etc)",
+         "Make-up (e.g. mascara, eye-shadows, etc) [show only to women]",
+         "Grooming products (e.g. razor, beard oil, etc) [show only to men]"
+        ],
+        "choicesOrder": "random",
+        "hasNone": true,
+        "noneText": "None of the above"
+       }
+      ]
+     },
+     {
+      "name": "page5",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "PurchasedClothing",
+        "title": "And which of the following clothing products have you bought in the past 3 months?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "Jumpers"
+         },
+         {
+          "value": "2",
+          "text": "Sweaters"
+         },
+         {
+          "value": "3",
+          "text": "Blouses"
+         },
+         {
+          "value": "4",
+          "text": "T-Shirts"
+         },
+         {
+          "value": "5",
+          "text": "Shirts"
+         },
+         {
+          "value": "6",
+          "text": "Trousers"
+         },
+         {
+          "value": "7",
+          "text": "Jeans"
+         },
+         {
+          "value": "8",
+          "text": "Dresses [show only to women]"
+         },
+         {
+          "value": "9",
+          "text": "Skirts [show only to women]"
+         },
+         {
+          "value": "10",
+          "text": "Coats"
+         },
+         {
+          "value": "11",
+          "text": "Jackets"
+         }
+        ],
+        "choicesOrder": "random",
+        "hasOther": true,
+        "hasNone": true,
+        "noneText": "None of the above",
+        "otherText": "Other, please specify:"
+       }
+      ]
+     },
+     {
+      "name": "page6",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "PurchasedShoes",
+        "title": "And which of the following shoe types have you bought in the past 3 months?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Sneakers",
+         "Ankle boots",
+         "Boots",
+         "Flat shoes",
+         "Lace-up shoes",
+         "Loafers",
+         "Sandals",
+         "Mules [show only to women]",
+         "Pumps [show only to women]",
+         "High-heels [show only to women]",
+         "Outdoor shoes",
+         "Other, please specify"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page7",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "PurchaseLocation",
+        "title": "Please indicate where you have purchased each of the following products: Clothing Shoes",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Online retailer",
+         "Online brand website",
+         "Clothing",
+         "Shoes",
+         "Department store",
+         "Retailer store",
+         "Brand store",
+         "Other"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page8",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "BrandAwareness",
+        "title": "Which of the following clothing / shoes brands do you know?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "[insert relevant brand list per country - maximum 30 items]",
+         "None of the above"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page9",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "BrandConsideration",
+        "title": "And which brands would you consider buying from  the next time you are buying clothes / shoes?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "[insert brands selected in S7]",
+         "None of the above"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page10",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "BrandPurchase",
+        "title": "And which of the following brands have you bought?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "[insert brands selected in S7]",
+         "None of the above"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page11",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "InfoWelcome",
+        "title": "Awesome, you have qualified for the survey! It is about evaluating different clothing / shoes pieces and it should take you around 10 minutes to complete. Please keep in mind there are no right or wrong answers - we value your opinion and your preferences. Have fun!",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page12",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "LastPurchase",
+        "title": "Before we proceed, can you tell us more about the last time you bought [insert relevant product category as selected in S5]?",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page13",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "InfoPurchase",
+        "title": "Think about your need to buy that particular piece, the store, its ambiance, what you do like and dislike about the product, anything that comes to mind.",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page14",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "InfoMaxDiff",
+        "title": "In this exercise, we will show you clothing / shoes pieces one by one, and we will ask you to indicate whether you would like the product or not. Simply click “Yes” if you like the product and “No” if you wouldn’t.",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page15",
+      "elements": [
+       {
+        "type": "radiogroup",
+        "name": "MaxDiffSwipe",
+        "title": "Do you like this product?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Yes",
+         "No"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page16",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "MaxDiff1",
+        "title": "Which of these products are you most likely to buy?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Product 1",
+         "Product 2",
+         "Product 3",
+         "Product 4"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page17",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "Intermezzo",
+        "title": "Great work, you are almost done! [insert number of remaining screens] to go!",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page18",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "MaxDiff2",
+        "title": "Which of these products are you most likely to buy?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Product 1",
+         "Product 2",
+         "Product 3",
+         "Product 4"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page19",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "InfoMaxDiffEnd",
+        "title": "Great, you are more than half-ready with the survey. In the next few questions, we will ask you more detailed feedback about some of the products you evaluated before. Again, please give your honest opinion and have fun!",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page20",
+      "elements": [
+       {
+        "type": "checkbox",
+        "name": "ProductDeepDive",
+        "title": "Could you tell us, what do you like about this product?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "It looks premium",
+         "It looks of higher quality",
+         "It looks sustainable",
+         "It has a nice cut",
+         "It has a nice fabric",
+         "It is fashionable",
+         "It is timeless",
+         "It can match well other pieces I have",
+         "Something else, please specify:"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page21",
+      "elements": [
+       {
+        "type": "expression",
+        "name": "Info",
+        "title": "You are almost done, in the last few questions we just want to understand a little bit more about you and your fashion attitude in general! Thank you for your time and effort on this one!",
+        "hideNumber": true,
+        "isRequired": true
+       }
+      ]
+     },
+     {
+      "name": "page22",
+      "elements": [
+       {
+        "type": "matrix",
+        "name": "FashionAttitude",
+        "title": "Please indicate to what extent you agree or disagree about the following statements:",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         "Strongly Disagree",
+         "Disagree",
+         "Neutral",
+         "Agree",
+         "Strongly Agree"
+        ],
+        "rows": [
+         "I buy clothes I like, regardless of fashion trends",
+         "I buy clothes considering the latest fashion trends",
+         "I prefer to buy well-established designer labels",
+         "I like to experiment and buy from a variety of designers",
+         "I like buying new clothes",
+         "I prefer to buy clothes when needed",
+         "It is important to me to dress nicely all the time",
+         "Dressing nicely depends on the occasion"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page23",
+      "elements": [
+       {
+        "type": "matrix",
+        "name": "FashionImage",
+        "title": "Please indicate to what extent you agree or disagree about the following statements:",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         "Strongly Disagree",
+         "Disagree",
+         "Neutral",
+         "Agree",
+         "Strongly Agree"
+        ],
+        "rows": [
+         "My friends come to me for fashion advice",
+         "I do not follow fashion trends",
+         "I would spend money for high-quality garments",
+         "I think it doesn't make sense spending a lot of money for clothing",
+         "I am considered a trend-setter"
+        ]
+       }
+      ]
+     },
+     {
+      "name": "page24",
+      "elements": [
+       {
+        "type": "radiogroup",
+        "name": "FashionStyle",
+        "title": "Which of these words describes you best when it comes to fashion?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         "Bold",
+         "Adventurous",
+         "Timeless",
+         "Glamourous",
+         "Comfortable",
+         "Timid",
+         "Cautious",
+         "Trendy",
+         "Plain",
+         "Format"
+        ]
+       }
+      ]
+     }
+    ],
+    "showPageTitles": false,
+    "showProgressBar": "top",
+    "questionTitlePattern": "numTitle",
+    "widthMode": "responsive"
+   }
 }];
 
 const results = [{
